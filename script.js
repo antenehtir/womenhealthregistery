@@ -50,3 +50,8 @@ function exportToExcel() {
     document.body.appendChild(link);
     link.click();
 }
+
+function resetForm() {
+    document.getElementById('registrationForm').reset();
+    document.getElementById('dataTable').getElementsByTagName('tbody')[0].innerHTML = "";
+}
