@@ -42,6 +42,14 @@ input, select {
     width: 100%;
 }
 
+.wide-input {
+    width: 100%;
+}
+
+.small-input {
+    width: 50%;
+}
+
 button {
     background: linear-gradient(45deg, #ff416c, #ff4b2b);
     color: white;
