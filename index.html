@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Women's Health Registration</title>
+    <title>Women's Health Screening Registration</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -29,11 +29,11 @@
         <label for="site">Campaign Site:</label>
         <input type="text" id="site" required>
 
-        <label for="doctor">Health professionals Name:</label>
+        <label for="doctor">Doctor's Name:</label>
         <input type="text" id="doctor" required>
 
-        <label for="phone">Patient Phone Number:</label>
-        <input type="tel" id="phone" required>
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" required class="wide-input">
 
         <label for="email">Email (Optional):</label>
         <input type="email" id="email">
@@ -50,10 +50,11 @@
         </select>
 
         <label for="otherDiagnosis">Other Diagnosis (Optional):</label>
-        <input type="text" id="otherDiagnosis">
+        <input type="text" id="otherDiagnosis" class="small-input">
 
         <button type="button" onclick="addEntry()">Add Entry</button>
         <button type="button" onclick="exportToExcel()">Export to Excel</button>
+        <button type="button" onclick="resetForm()">Reset</button>
     </form>
 
     <table id="dataTable">
