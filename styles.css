@@ -10,7 +10,7 @@ body {
 }
 
 .container {
-    max-width: 800px;
+    max-width: 900px;
     margin: 50px auto;
     background: rgba(0, 0, 0, 0.85);
     padding: 20px;
@@ -47,7 +47,7 @@ input, select {
 }
 
 .small-input {
-    width: 50%;
+    width: 80%;
 }
 
 button {
@@ -68,11 +68,12 @@ button:hover {
     transform: scale(1.05);
 }
 
+/* Table Adjustments */
 table {
     width: 100%;
     margin-top: 20px;
     border-collapse: collapse;
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.95);
     color: black;
     border-radius: 10px;
     overflow: hidden;
@@ -82,6 +83,7 @@ th, td {
     padding: 12px;
     border: 1px solid #ddd;
     text-align: center;
+    word-wrap: break-word;
 }
 
 th {
@@ -89,6 +91,11 @@ th {
     color: white;
 }
 
-td {
-    word-wrap: break-word;
+/* Adjusting table column widths */
+th:nth-child(7), td:nth-child(7) {
+    min-width: 140px;  /* Phone number wider */
+}
+
+th:nth-child(9), td:nth-child(9) {
+    min-width: 180px;  /* Diagnosis wider */
 }
