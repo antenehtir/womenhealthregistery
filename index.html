@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Women's Health Registration</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Women's Health Screening Registration</h1>
+    <form id="registrationForm">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" required>
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" required>
+
+        <label for="sex">Sex:</label>
+        <select id="sex">
+            <option value="Female">Female</option>
+            <option value="Male">Male</option>
+        </select>
+
+        <label for="date">Date:</label>
+        <input type="date" id="date" required>
+
+        <label for="site">Campaign Site:</label>
+        <input type="text" id="site" required>
+
+        <label for="doctor">Health professionals Name:</label>
+        <input type="text" id="doctor" required>
+
+        <label for="phone">Patient Phone Number:</label>
+        <input type="tel" id="phone" required>
+
+        <label for="email">Email (Optional):</label>
+        <input type="email" id="email">
+
+        <label for="diagnosis">Diagnosis:</label>
+        <select id="diagnosis">
+            <option value="NORMAL">NORMAL</option>
+            <option value="Hepatitis B Positive">Hepatitis B Positive</option>
+            <option value="Hepatitis C Positive">Hepatitis C Positive</option>
+            <option value="Syphilis Positive">Syphilis Positive</option>
+            <option value="HIV Positive">HIV Positive</option>
+            <option value="UTI">UTI</option>
+            <option value="Other">Other (Specify Below)</option>
+        </select>
+
+        <label for="otherDiagnosis">Other Diagnosis (Optional):</label>
+        <input type="text" id="otherDiagnosis">
+
+        <button type="button" onclick="addEntry()">Add Entry</button>
+        <button type="button" onclick="exportToExcel()">Export to Excel</button>
+    </form>
+
+    <table id="dataTable">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Sex</th>
+                <th>Date</th>
+                <th>Campaign Site</th>
+                <th>Doctor</th>
+                <th>Phone</th>
+                <th>Email</th>
+                <th>Diagnosis</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
