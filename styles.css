@@ -1,9 +1,14 @@
+* {
+  box-sizing: border-box;
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
 body {
   font-family: 'Poppins', sans-serif;
   background: url('https://www.healtheuropa.com/wp-content/uploads/2020/01/H12-S-Robinson-REP-2004-atl-image-696x392.jpg')
     no-repeat center center/cover;
+  background-size: cover;
   background-attachment: fixed;
   margin: 0;
   padding: 0;
@@ -45,7 +50,6 @@ select {
   border: 1px solid #ccc;
   width: 100%;
   font-size: 16px;
-  box-sizing: border-box;
   transition: border 0.3s;
 }
 
@@ -88,9 +92,13 @@ button:hover {
 }
 
 /* Table Styles */
+.table-responsive {
+  overflow-x: auto;
+  margin-top: 30px;
+}
+
 table {
   width: 100%;
-  margin-top: 30px;
   border-collapse: collapse;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
@@ -118,7 +126,36 @@ td:nth-child(7) {
   min-width: 140px; /* Phone number wider */
 }
 
+th:nth-child(9),
+td:nth-child(9) {
+  min-width: 80px; /* Blood Group column */
+}
+
 th:nth-child(11),
 td:nth-child(11) {
   min-width: 180px; /* Diagnosis/Remark wider */
+}
+
+/* Responsive design */
+@media screen and (max-width: 600px) {
+  h1 {
+    font-size: 24px;
+  }
+  form {
+    gap: 10px;
+  }
+  input,
+  select {
+    font-size: 14px;
+    padding: 8px;
+  }
+  button {
+    font-size: 14px;
+    padding: 10px 15px;
+  }
+  th,
+  td {
+    padding: 8px;
+    font-size: 12px;
+  }
 }
