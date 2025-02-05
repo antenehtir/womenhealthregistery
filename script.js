@@ -20,12 +20,12 @@ function addEntry() {
   const name = document.getElementById("name").value;
   const age = document.getElementById("age").value;
   const sex = document.getElementById("sex").value;
-  const date = document.getElementById("date").value;
-  const site = document.getElementById("site").value;
-  const doctor = document.getElementById("doctor").value;
   const phone = document.getElementById("phone").value;
   const email = document.getElementById("email").value || "N/A";
   const bloodGroup = document.getElementById("bloodGroup").value;
+  const date = document.getElementById("date").value;
+  const site = document.getElementById("site").value;
+  const doctor = document.getElementById("doctor").value;
   const invStatus = document.getElementById("investigationStatus").value;
 
   let diagnosisOrRemark = "";
@@ -40,25 +40,44 @@ function addEntry() {
     diagnosisOrRemark = document.getElementById("notDoneRemark").value;
   }
 
-  // Insert new row in the table with correct column order
+  // Insert new row in the table (columns order matches the table header)
   const tableBody = document.getElementById("dataTable").getElementsByTagName("tbody")[0];
   const newRow = tableBody.insertRow();
   newRow.innerHTML = `<td>${name}</td>
                       <td>${age}</td>
                       <td>${sex}</td>
-                      <td>${date}</td>
-                      <td>${site}</td>
-                      <td>${doctor}</td>
                       <td>${phone}</td>
                       <td>${email}</td>
                       <td>${bloodGroup}</td>
+                      <td>${date}</td>
+                      <td>${site}</td>
+                      <td>${doctor}</td>
                       <td>${invStatus}</td>
                       <td>${diagnosisOrRemark}</td>`;
 
-  // Reset the form and set investigation details visibility to default
-  document.getElementById("registrationForm").reset();
+  // Save common field values (date, campaign site, doctor's name)
+  const savedDate = date;
+  const savedSite = site;
+  const savedDoctor = doctor;
+
+  // Reset only the patient-specific fields & investigation fields
+  document.getElementById("name").value = "";
+  document.getElementById("age").value = "";
+  document.getElementById("sex").selectedIndex = 0;
+  document.getElementById("phone").value = "";
+  document.getElementById("email").value = "";
+  document.getElementById("bloodGroup").selectedIndex = 0;
+  document.getElementById("investigationStatus").selectedIndex = 0;
   document.getElementById("investigationDetails").style.display = "block";
   document.getElementById("investigationNotDoneDetails").style.display = "none";
+  document.getElementById("diagnosis").selectedIndex = 0;
+  document.getElementById("otherDiagnosis").value = "";
+  document.getElementById("notDoneRemark").value = "";
+
+  // Restore common fields
+  document.getElementById("date").value = savedDate;
+  document.getElementById("site").value = savedSite;
+  document.getElementById("doctor").value = savedDoctor;
 }
 
 function exportToExcel() {
@@ -85,9 +104,10 @@ function exportToExcel() {
 }
 
 function resetForm() {
+  // Clear entire form and table
   document.getElementById("registrationForm").reset();
   document.getElementById("dataTable").getElementsByTagName("tbody")[0].innerHTML = "";
-  // Reset investigation fields to default visibility
+  // Reset investigation details to default visibility
   document.getElementById("investigationDetails").style.display = "block";
   document.getElementById("investigationNotDoneDetails").style.display = "none";
 }
