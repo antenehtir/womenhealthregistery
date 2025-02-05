@@ -1,81 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Women's Health Screening Registration</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Women's Health Screening Registration</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-
-<div class="container">
+  <div class="container">
     <h1>Women's Health Screening Registration</h1>
     <form id="registrationForm">
-        <label for="name">Full Name:</label>
-        <input type="text" id="name" required>
+      <label for="name">Full Name:</label>
+      <input type="text" id="name" required />
 
-        <label for="age">Age:</label>
-        <input type="number" id="age" required>
+      <label for="age">Age:</label>
+      <input type="number" id="age" required />
 
-        <label for="sex">Sex:</label>
-        <select id="sex">
-            <option value="Female">Female</option>
-            <option value="Male">Male</option>
-        </select>
+      <label for="sex">Sex:</label>
+      <select id="sex">
+        <option value="Female">Female</option>
+        <option value="Male">Male</option>
+      </select>
 
-        <label for="date">Date:</label>
-        <input type="date" id="date" required>
+      <label for="date">Date:</label>
+      <input type="date" id="date" required />
 
-        <label for="site">Campaign Site:</label>
-        <input type="text" id="site" required>
+      <label for="site">Campaign Site:</label>
+      <input type="text" id="site" required />
 
-        <label for="doctor">Doctor's Name:</label>
-        <input type="text" id="doctor" required>
+      <label for="doctor">Doctor's Name:</label>
+      <input type="text" id="doctor" required />
 
-        <label for="phone">Phone Number:</label>
-        <input type="tel" id="phone" required class="wide-input">
+      <label for="phone">Phone Number:</label>
+      <input type="tel" id="phone" required class="wide-input" />
 
-        <label for="email">Email (Optional):</label>
-        <input type="email" id="email">
+      <label for="email">Email (Optional):</label>
+      <input type="email" id="email" />
 
+      <label for="bloodGroup">Blood Group:</label>
+      <select id="bloodGroup">
+        <option value="A+">A+</option>
+        <option value="A-">A-</option>
+        <option value="B+">B+</option>
+        <option value="B-">B-</option>
+        <option value="AB+">AB+</option>
+        <option value="AB-">AB-</option>
+        <option value="O+">O+</option>
+        <option value="O-">O-</option>
+      </select>
+
+      <label for="investigationStatus">Investigation Status:</label>
+      <select id="investigationStatus">
+        <option value="Done">Investigation Done</option>
+        <option value="Not Done">Investigation Not Done</option>
+      </select>
+
+      <div id="investigationDetails">
         <label for="diagnosis">Diagnosis:</label>
         <select id="diagnosis">
-            <option value="NORMAL">NORMAL</option>
-            <option value="Hepatitis B Positive">Hepatitis B Positive</option>
-            <option value="Hepatitis C Positive">Hepatitis C Positive</option>
-            <option value="Syphilis Positive">Syphilis Positive</option>
-            <option value="HIV Positive">HIV Positive</option>
-            <option value="UTI">UTI</option>
-            <option value="Other">Other (Specify Below)</option>
+          <option value="NORMAL">NORMAL</option>
+          <option value="Hepatitis B Positive">Hepatitis B Positive</option>
+          <option value="Hepatitis C Positive">Hepatitis C Positive</option>
+          <option value="Syphilis Positive">Syphilis Positive</option>
+          <option value="HIV Positive">HIV Positive</option>
+          <option value="UTI">UTI</option>
+          <option value="Other">Other (Specify Below)</option>
         </select>
 
         <label for="otherDiagnosis">Other Diagnosis (Optional):</label>
-        <input type="text" id="otherDiagnosis" class="small-input">
+        <input type="text" id="otherDiagnosis" class="small-input" />
+      </div>
 
+      <div id="investigationNotDoneDetails" style="display: none;">
+        <label for="notDoneRemark">Remark for Investigation Not Done:</label>
+        <input type="text" id="notDoneRemark" />
+      </div>
+
+      <div class="buttons">
         <button type="button" onclick="addEntry()">Add Entry</button>
         <button type="button" onclick="exportToExcel()">Export to Excel</button>
         <button type="button" onclick="resetForm()">Reset</button>
+      </div>
     </form>
 
     <table id="dataTable">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Age</th>
-                <th>Sex</th>
-                <th>Date</th>
-                <th>Campaign Site</th>
-                <th>Doctor</th>
-                <th>Phone</th>
-                <th>Email</th>
-                <th>Diagnosis</th>
-            </tr>
-        </thead>
-        <tbody></tbody>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Sex</th>
+          <th>Date</th>
+          <th>Campaign Site</th>
+          <th>Doctor</th>
+          <th>Phone</th>
+          <th>Email</th>
+          <th>Blood Group</th>
+          <th>Investigation Status</th>
+          <th>Diagnosis / Remark</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
     </table>
-</div>
-
-<script src="script.js"></script>
-
+  </div>
+  <script src="script.js"></script>
 </body>
 </html>
