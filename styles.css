@@ -1,101 +1,124 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
 body {
-    font-family: 'Poppins', sans-serif;
-    background: url('https://www.healtheuropa.com/wp-content/uploads/2020/01/H12-S-Robinson-REP-2004-atl-image-696x392.jpg') no-repeat center center/cover;
-    background-size: cover;
-    background-attachment: fixed;
-    color: white;
-    text-align: center;
+  font-family: 'Poppins', sans-serif;
+  background: url('https://www.healtheuropa.com/wp-content/uploads/2020/01/H12-S-Robinson-REP-2004-atl-image-696x392.jpg')
+    no-repeat center center/cover;
+  background-attachment: fixed;
+  margin: 0;
+  padding: 0;
+  color: #333;
 }
 
 .container {
-    max-width: 900px;
-    margin: 50px auto;
-    background: rgba(0, 0, 0, 0.85);
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  max-width: 900px;
+  margin: 50px auto;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 20px 30px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 }
 
 h1 {
-    font-size: 24px;
-    margin-bottom: 20px;
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #ff4b2b;
+  text-align: center;
 }
 
 form {
-    display: flex;
-    flex-direction: column;
-    text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
 label {
-    font-weight: 600;
-    margin: 10px 0 5px;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #555;
 }
 
-input, select {
-    padding: 10px;
-    margin-bottom: 15px;
-    border-radius: 5px;
-    border: none;
-    width: 100%;
+input,
+select {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  width: 100%;
+  font-size: 16px;
+  box-sizing: border-box;
+  transition: border 0.3s;
+}
+
+input:focus,
+select:focus {
+  border-color: #ff4b2b;
+  outline: none;
 }
 
 .wide-input {
-    width: 100%;
+  width: 100%;
 }
 
 .small-input {
-    width: 80%;
+  width: 100%;
+}
+
+.buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 10px;
 }
 
 button {
-    background: linear-gradient(45deg, #ff416c, #ff4b2b);
-    color: white;
-    font-size: 16px;
-    font-weight: bold;
-    padding: 12px;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: all 0.3s ease;
-    margin-top: 10px;
+  background: linear-gradient(45deg, #ff416c, #ff4b2b);
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 12px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: transform 0.3s, background 0.3s;
 }
 
 button:hover {
-    background: linear-gradient(45deg, #ff4b2b, #ff416c);
-    transform: scale(1.05);
+  background: linear-gradient(45deg, #ff4b2b, #ff416c);
+  transform: scale(1.05);
 }
 
-/* Table Adjustments */
+/* Table Styles */
 table {
-    width: 100%;
-    margin-top: 20px;
-    border-collapse: collapse;
-    background: rgba(255, 255, 255, 0.95);
-    color: black;
-    border-radius: 10px;
-    overflow: hidden;
+  width: 100%;
+  margin-top: 30px;
+  border-collapse: collapse;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-th, td {
-    padding: 12px;
-    border: 1px solid #ddd;
-    text-align: center;
-    word-wrap: break-word;
+th,
+td {
+  padding: 12px;
+  border: 1px solid #ddd;
+  text-align: center;
+  word-wrap: break-word;
 }
 
 th {
-    background: #ff4b2b;
-    color: white;
+  background: #ff4b2b;
+  color: white;
+}
+
+td {
+  background: #fff;
 }
 
 /* Adjusting table column widths */
-th:nth-child(7), td:nth-child(7) {
-    min-width: 140px;  /* Phone number wider */
+th:nth-child(7),
+td:nth-child(7) {
+  min-width: 140px; /* Phone number wider */
 }
 
-th:nth-child(9), td:nth-child(9) {
-    min-width: 180px;  /* Diagnosis wider */
+th:nth-child(11),
+td:nth-child(11) {
+  min-width: 180px; /* Diagnosis/Remark wider */
 }
