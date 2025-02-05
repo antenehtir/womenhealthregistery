@@ -26,10 +26,10 @@ function addEntry() {
   const phone = document.getElementById("phone").value;
   const email = document.getElementById("email").value || "N/A";
   const bloodGroup = document.getElementById("bloodGroup").value;
-  const investigationStatus = document.getElementById("investigationStatus").value;
+  const invStatus = document.getElementById("investigationStatus").value;
 
   let diagnosisOrRemark = "";
-  if (investigationStatus === "Done") {
+  if (invStatus === "Done") {
     let diagnosis = document.getElementById("diagnosis").value;
     const otherDiagnosis = document.getElementById("otherDiagnosis").value;
     if (diagnosis === "Other" && otherDiagnosis.trim() !== "") {
@@ -40,9 +40,9 @@ function addEntry() {
     diagnosisOrRemark = document.getElementById("notDoneRemark").value;
   }
 
-  // Insert new row in the table
-  const table = document.getElementById("dataTable").getElementsByTagName("tbody")[0];
-  const newRow = table.insertRow();
+  // Insert new row in the table with correct column order
+  const tableBody = document.getElementById("dataTable").getElementsByTagName("tbody")[0];
+  const newRow = tableBody.insertRow();
   newRow.innerHTML = `<td>${name}</td>
                       <td>${age}</td>
                       <td>${sex}</td>
@@ -52,7 +52,7 @@ function addEntry() {
                       <td>${phone}</td>
                       <td>${email}</td>
                       <td>${bloodGroup}</td>
-                      <td>${investigationStatus}</td>
+                      <td>${invStatus}</td>
                       <td>${diagnosisOrRemark}</td>`;
 
   // Reset the form and set investigation details visibility to default
