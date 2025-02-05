@@ -40,16 +40,17 @@ function addEntry() {
     diagnosisOrRemark = document.getElementById("notDoneRemark").value;
   }
 
-  // Insert new row in the table (the order is now: Name, Age, Sex, Date, Email, Blood Group, Phone, Campaign Site, Doctor's Name, Investigation Status, Diagnosis/Remark)
+  // Insert new row in the table with the corrected order:
+  // Name, Age, Sex, Phone, Email, Blood Group, Date, Campaign Site, Doctor's Name, Investigation Status, Diagnosis/Remark
   const tableBody = document.getElementById("dataTable").getElementsByTagName("tbody")[0];
   const newRow = tableBody.insertRow();
   newRow.innerHTML = `<td>${name}</td>
                       <td>${age}</td>
                       <td>${sex}</td>
-                      <td>${date}</td>
+                      <td>${phone}</td>
                       <td>${email}</td>
                       <td>${bloodGroup}</td>
-                      <td>${phone}</td>
+                      <td>${date}</td>
                       <td>${site}</td>
                       <td>${doctor}</td>
                       <td>${invStatus}</td>
