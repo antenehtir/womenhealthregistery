@@ -40,16 +40,16 @@ function addEntry() {
     diagnosisOrRemark = document.getElementById("notDoneRemark").value;
   }
 
-  // Insert new row in the table (columns order matches the table header)
+  // Insert new row in the table (the order is now: Name, Age, Sex, Date, Email, Blood Group, Phone, Campaign Site, Doctor's Name, Investigation Status, Diagnosis/Remark)
   const tableBody = document.getElementById("dataTable").getElementsByTagName("tbody")[0];
   const newRow = tableBody.insertRow();
   newRow.innerHTML = `<td>${name}</td>
                       <td>${age}</td>
                       <td>${sex}</td>
-                      <td>${phone}</td>
+                      <td>${date}</td>
                       <td>${email}</td>
                       <td>${bloodGroup}</td>
-                      <td>${date}</td>
+                      <td>${phone}</td>
                       <td>${site}</td>
                       <td>${doctor}</td>
                       <td>${invStatus}</td>
@@ -60,7 +60,7 @@ function addEntry() {
   const savedSite = site;
   const savedDoctor = doctor;
 
-  // Reset only the patient-specific fields & investigation fields
+  // Reset only the patient-specific and investigation fields
   document.getElementById("name").value = "";
   document.getElementById("age").value = "";
   document.getElementById("sex").selectedIndex = 0;
