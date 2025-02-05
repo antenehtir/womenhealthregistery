@@ -10,6 +10,7 @@
   <div class="container">
     <h1>Women's Health Screening Registration</h1>
     <form id="registrationForm">
+      <!-- Patient Information -->
       <label for="name">Full Name:</label>
       <input type="text" id="name" required />
 
@@ -21,15 +22,6 @@
         <option value="Female">Female</option>
         <option value="Male">Male</option>
       </select>
-
-      <label for="date">Date:</label>
-      <input type="date" id="date" required />
-
-      <label for="site">Campaign Site:</label>
-      <input type="text" id="site" required />
-
-      <label for="doctor">Doctor's Name:</label>
-      <input type="text" id="doctor" required />
 
       <label for="phone">Phone Number:</label>
       <input type="tel" id="phone" required class="wide-input" />
@@ -49,6 +41,17 @@
         <option value="O-">O-</option>
       </select>
 
+      <!-- Common Fields (persist after Add Entry) -->
+      <label for="date">Date:</label>
+      <input type="date" id="date" required />
+
+      <label for="site">Campaign Site:</label>
+      <input type="text" id="site" required />
+
+      <label for="doctor">Doctor's Name:</label>
+      <input type="text" id="doctor" required />
+
+      <!-- Investigation Details -->
       <label for="investigationStatus">Investigation Status:</label>
       <select id="investigationStatus">
         <option value="Done">Investigation Done</option>
@@ -76,6 +79,7 @@
         <input type="text" id="notDoneRemark" />
       </div>
 
+      <!-- Action Buttons -->
       <div class="buttons">
         <button type="button" onclick="addEntry()">Add Entry</button>
         <button type="button" onclick="exportToExcel()">Export to Excel</button>
@@ -83,6 +87,7 @@
       </div>
     </form>
 
+    <!-- Table Display -->
     <div class="table-responsive">
       <table id="dataTable">
         <thead>
@@ -90,12 +95,12 @@
             <th>Name</th>
             <th>Age</th>
             <th>Sex</th>
-            <th>Date</th>
-            <th>Campaign Site</th>
-            <th>Doctor</th>
             <th>Phone</th>
             <th>Email</th>
             <th>Blood Group</th>
+            <th>Date</th>
+            <th>Campaign Site</th>
+            <th>Doctor's Name</th>
             <th>Investigation Status</th>
             <th>Diagnosis / Remark</th>
           </tr>
