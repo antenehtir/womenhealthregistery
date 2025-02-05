@@ -121,19 +121,29 @@ td {
 }
 
 /* Adjusting table column widths */
-th:nth-child(7),
-td:nth-child(7) {
-  min-width: 140px; /* Phone number wider */
+th:nth-child(4),
+td:nth-child(4) {
+  min-width: 140px; /* Phone column */
+}
+
+th:nth-child(5),
+td:nth-child(5) {
+  min-width: 200px; /* Email column */
+}
+
+th:nth-child(6),
+td:nth-child(6) {
+  min-width: 80px;  /* Blood Group */
 }
 
 th:nth-child(9),
 td:nth-child(9) {
-  min-width: 80px; /* Blood Group column */
+  min-width: 140px; /* Doctor's Name */
 }
 
 th:nth-child(11),
 td:nth-child(11) {
-  min-width: 180px; /* Diagnosis/Remark wider */
+  min-width: 180px; /* Diagnosis/Remark */
 }
 
 /* Responsive design */
