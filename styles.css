@@ -123,7 +123,7 @@ td {
 /* Adjusting table column widths */
 th:nth-child(4),
 td:nth-child(4) {
-  min-width: 140px; /* Date column */
+  min-width: 140px; /* Phone column */
 }
 
 th:nth-child(5),
@@ -133,7 +133,7 @@ td:nth-child(5) {
 
 th:nth-child(7),
 td:nth-child(7) {
-  min-width: 140px; /* Phone column */
+  min-width: 140px; /* Date column */
 }
 
 /* Responsive design */
